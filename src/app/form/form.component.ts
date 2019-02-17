@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+formGroup:FormGroup;
+  
+  constructor(
+    private formBulid:FormBuilder) //     constructorใช้ได้แค่ในconstructor เท่านั้นเลยใช้ private
+     {
 
-  constructor() { }
+     }
 
   ngOnInit() {
+  this.formGroup= this.formBulid.group({
+    firstName:[''],
+    lastName:['']
+  })
+
   }
 
 }
