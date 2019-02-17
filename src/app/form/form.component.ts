@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-formGroup:FormGroup;
+formGroup1:FormGroup;
   
   constructor(
     private formBulid:FormBuilder) //     constructorใช้ได้แค่ในconstructor เท่านั้นเลยใช้ private
@@ -16,11 +16,13 @@ formGroup:FormGroup;
      }
 
   ngOnInit() {
-  this.formGroup= this.formBulid.group({
-    firstName:[''],
+  this.formGroup1= this.formBulid.group({
+    firstName:this.formBulid.control(''),//ประกาศได้2แบบ
     lastName:['']
   })
 
   }
-
+  onSubmit(form:FormGroup){
+    console.log(form);
+}
 }
