@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { user } from './user';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'web';
+  user:user;
+  onChange(user:user){
+    this.user = user;
+  }
 }
